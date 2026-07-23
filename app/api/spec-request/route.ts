@@ -125,11 +125,14 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
+  // Emails are best-effort: the request is already saved, so a missing key
+  // or Resend outage must never fail the buyer's submission.
+  const resendKey = process.env.RESEND_API_KEY;
+  const resend = resendKey ? new Resend(resendKey) : null;
   const notifyEmail = process.env.NOTIFY_EMAIL;
   const from = "Vector Auto Exports <notify@mail.vectorautoexports.com>";
 
-  if (notifyEmail) {
+  if (resend && notifyEmail) {
     try {
       await resend.emails.send({
         from,
@@ -158,7 +161,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    await resend.emails.send({
+    await resend?.emails.send({
       from,
       to: email,
       subject: "Spec request received — Vector Auto Exports",

@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #14212b;
+  --hull: #22333f;
+  --paper: #f7f5f0;
+  --steel: #8c9ba5;
+  --flag: #e8a33d;
+  --cleared: #2f7d5b;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+::selection {
+  background: var(--flag);
+  color: var(--ink);
+}
+
+/* Visible focus everywhere, amber ring per design tokens */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--flag);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Manifest tag: notched top-right corner */
+.manifest-notch {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    0 100%
+  );
+}

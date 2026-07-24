@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { CatalogCategory } from "@/data/catalog";
 import { LANE_LABELS } from "@/data/catalog";
-import PlaceholderFrame from "@/components/PlaceholderFrame";
+import CatalogImage from "@/components/CatalogImage";
 
 export default function ManifestCard({
   category,
@@ -25,7 +25,11 @@ export default function ManifestCard({
         </span>
       </div>
 
-      <PlaceholderFrame label={category.title} />
+      <CatalogImage
+        slug={category.slug}
+        alt={category.title}
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+      />
 
       <div className="flex flex-1 flex-col gap-3 px-4 py-4">
         <p className="font-mono text-xs leading-relaxed text-hull">

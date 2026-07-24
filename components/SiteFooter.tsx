@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import logoWhite from "@/public/brand/logo-white-stacked.png";
 
 export default function SiteFooter() {
   return (
@@ -6,10 +8,12 @@ export default function SiteFooter() {
       <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
           <div>
-            <p className="font-display text-lg font-semibold uppercase tracking-wide">
-              Vector Auto Exports
-            </p>
-            <p className="mt-2 max-w-md text-sm text-paper/80">
+            <Image
+              src={logoWhite}
+              alt="Vector Auto Exports"
+              className="h-12 w-auto"
+            />
+            <p className="mt-3 max-w-md text-sm text-paper/80">
               Vector Auto Exports is a Vector Trade Capital company. Houston,
               Texas.
             </p>

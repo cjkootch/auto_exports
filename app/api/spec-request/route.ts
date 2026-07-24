@@ -130,7 +130,7 @@ export async function POST(req: NextRequest) {
   const resendKey = process.env.RESEND_API_KEY;
   const resend = resendKey ? new Resend(resendKey) : null;
   const notifyEmail = process.env.NOTIFY_EMAIL;
-  const from = "Vector Auto Exports <notify@mail.vectorautoexports.com>";
+  const from = "Vector Auto Exports <notify@vectorautoexports.com>";
 
   if (resend && notifyEmail) {
     try {

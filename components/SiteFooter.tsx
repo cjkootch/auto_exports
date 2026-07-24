@@ -24,7 +24,7 @@ export default function SiteFooter() {
             </p>
             <p className="mt-2">
               <a
-                href="mailto:notify@mail.vectorautoexports.com"
+                href="mailto:notify@vectorautoexports.com"
                 className="underline underline-offset-4 hover:text-flag"
               >
                 Email us

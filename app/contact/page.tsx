@@ -24,10 +24,10 @@ export default function ContactPage() {
       <p className="mt-2 text-sm text-steel">
         Prefer email? Write to{" "}
         <a
-          href="mailto:notify@mail.vectorautoexports.com"
+          href="mailto:notify@vectorautoexports.com"
           className="underline underline-offset-4 hover:text-ink"
         >
-          notify@mail.vectorautoexports.com
+          notify@vectorautoexports.com
         </a>
         .
       </p>

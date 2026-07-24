@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import heroPort from "@/public/hero-port.jpg";
 
 const steps = [
   {
@@ -23,8 +25,26 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-ink text-paper">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <section className="relative isolate overflow-hidden bg-ink text-paper">
+        <Image
+          src={heroPort}
+          alt="Container-crane terminal at dusk"
+          fill
+          priority
+          sizes="100vw"
+          placeholder="blur"
+          className="object-cover object-center"
+        />
+        {/* Legibility overlays: darker at the left where the copy sits */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-ink/25"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 py-24 sm:px-6 sm:py-36">
           <p className="font-mono text-xs uppercase tracking-widest text-flag">
             Houston · Container &amp; RoRo · Caribbean · Gulf · Caucasus
           </p>

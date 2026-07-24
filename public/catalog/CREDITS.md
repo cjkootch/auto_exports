@@ -15,3 +15,4 @@ remove a row when you replace its image with a real photo of our own.
 | rebuildable-lux.jpg | https://www.pexels.com/photo/6442699/ |
 | luxury-request.jpg | https://www.pexels.com/photo/14471686/ |
 | heavy-fleet.jpg | https://www.pexels.com/photo/38199714/ |
+| ../hero-port.jpg (homepage hero) | https://www.pexels.com/photo/4941340/ |

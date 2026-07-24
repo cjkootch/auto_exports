@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Barlow, Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
+import { Roboto, Barlow_Condensed, IBM_Plex_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
@@ -11,9 +11,9 @@ const display = Barlow_Condensed({
   weight: ["500", "600", "700"],
   variable: "--font-display",
 });
-const body = Barlow({
+const body = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "700"],
   variable: "--font-body",
 });
 const mono = IBM_Plex_Mono({

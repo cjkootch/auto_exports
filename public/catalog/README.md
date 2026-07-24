@@ -1,6 +1,16 @@
 # Catalog images
 
-Drop real photos of loads/units here, one per category, named by slug:
+Each category has a representative 16:9 image at `public/catalog/<slug>.jpg`,
+wired up in `data/catalog-images.ts` and rendered by
+`components/CatalogImage.tsx` (via `next/image` static import, so cropping,
+sizing, and blur-up placeholders are automatic).
+
+Current images are **licensed stock** (Pexels — see `CREDITS.md`) standing in
+until real photos of loads/units are available.
+
+## Swapping in a real photo
+
+Replace any file with a same-named JPG (ideally ~1600×900, 16:9, under ~300 KB):
 
 ```
 public/catalog/clean-sedans.jpg
@@ -13,19 +23,6 @@ public/catalog/luxury-request.jpg
 public/catalog/heavy-fleet.jpg
 ```
 
-Then swap `components/PlaceholderFrame.tsx` usage in
-`components/ManifestCard.tsx` and `app/catalog/[slug]/page.tsx` for
-`next/image`:
-
-```tsx
-<Image
-  src={`/catalog/${category.slug}.jpg`}
-  alt={category.title}
-  width={800}
-  height={450}
-  className="aspect-[16/9] object-cover"
-/>
-```
-
-Recommended: 1600×900 (16:9), JPG, under ~300 KB each. No stock photos —
-real photos of our loads and units only.
+No code change needed — the filename is the only link. If you add a new
+category, add its image and a matching entry in `data/catalog-images.ts`.
+When you drop in real photos, remove the corresponding row from `CREDITS.md`.

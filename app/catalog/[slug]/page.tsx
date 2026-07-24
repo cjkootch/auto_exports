@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CATALOG, LANE_LABELS, getCategory } from "@/data/catalog";
-import PlaceholderFrame from "@/components/PlaceholderFrame";
+import CatalogImage from "@/components/CatalogImage";
 import SpecRequestForm from "@/components/SpecRequestForm";
 
 export function generateStaticParams() {
@@ -62,8 +62,13 @@ export default function CategoryPage({
             {category.spec}
           </p>
           <p className="mt-3 text-steel">{category.note}</p>
-          <div className="mt-6 manifest-notch border border-ink/15">
-            <PlaceholderFrame label={category.title} />
+          <div className="mt-6 manifest-notch overflow-hidden border border-ink/15">
+            <CatalogImage
+              slug={category.slug}
+              alt={category.title}
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              priority
+            />
           </div>
         </div>
 
